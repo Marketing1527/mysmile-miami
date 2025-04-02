@@ -1,0 +1,427 @@
+/* Custom styles for Smile Design Miami */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom gradient text */
+.gradient-text {
+    background: linear-gradient(to right, #ec4899, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hover effects */
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Mobile menu */
+.mobile-menu {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+/* Custom form styles */
+.form-input:focus {
+    border-color: #ec4899;
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+/* Before/After image comparison slider */
+.comparison-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+}
+
+.comparison-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comparison-slider .slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ec4899, #3b82f6);
+    border-radius: 4px;
+}
+
+/* Loading animation */
+.loading-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Custom button styles */
+.btn-primary {
+    background: linear-gradient(to right, #ec4899, #3b82f6);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(236, 72, 153, 0.1);
+}
+
+/* Before/After Slider Styles */
+.before-after-slider {
+    aspect-ratio: 4/3;
+    cursor: ew-resize;
+    position: relative;
+}
+
+.before-after-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0.1s ease-out;
+}
+
+.slider-handle {
+    touch-action: none;
+    pointer-events: auto;
+}
+
+.handle-circle {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.before-after-slider:hover .handle-circle {
+    transform: scale(1.1);
+}
+
+.before-after-slider::before {
+    content: 'Before';
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    z-index: 10;
+}
+
+.before-after-slider::after {
+    content: 'After';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    z-index: 10;
+}
+
+/* Before/After Card Styles */
+.before-after-card {
+    background: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.before-after-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.before-after-card .relative {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.before-after-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.before-after-card .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+    transition: backdrop-filter 0.5s ease;
+}
+
+.before-after-card:hover .backdrop-blur-md {
+    backdrop-filter: blur(8px);
+}
+
+.before-after-card .backdrop-blur-md.clicked {
+    backdrop-filter: blur(0);
+}
+
+/* Click instruction animation */
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+.before-after-card:hover p:last-child {
+    animation: pulse 2s infinite;
+}
+
+/* Hero Section Animations */
+.hero-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-content.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-line {
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-line.animate {
+    width: 100%;
+}
+
+/* Multi-step Form Styles */
+.step-indicator {
+    color: #6B7280;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+.step-indicator.active {
+    color: #EC4899;
+}
+
+.step-indicator.completed {
+    color: #10B981;
+}
+
+.progress-bar {
+    transition: width 0.5s ease-in-out;
+}
+
+.form-step {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.form-step.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-option {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-option.selected {
+    border-color: #EC4899;
+    background-color: #FDF2F8;
+}
+
+.service-option.selected::after {
+    content: '✓';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #EC4899;
+    font-weight: bold;
+}
+
+#time-slots {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.time-slot {
+    padding: 0.75rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.time-slot:hover {
+    border-color: #EC4899;
+    background-color: #FDF2F8;
+}
+
+.time-slot.selected {
+    background-color: #EC4899;
+    color: white;
+    border-color: #EC4899;
+}
+
+/* Header Styles */
+header nav {
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+header.scrolled nav {
+    transform: translateY(-0.5rem);
+}
+
+/* Navigation Link Styles */
+.nav-link {
+    position: relative;
+    z-index: 1;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #FDF2F8;
+    border-radius: 9999px;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.nav-link.active {
+    color: #EC4899;
+}
+
+/* Service Card Animations */
+.service-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.service-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Service Icon Animation */
+.service-icon {
+    transition: transform 0.3s ease-out;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Service Card Hover Effect */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Service Title Animation */
+.service-title {
+    position: relative;
+    display: inline-block;
+}
+
+.service-title::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(to right, #ec4899, #3b82f6);
+    transition: width 0.3s ease-out;
+}
+
+.service-card:hover .service-title::after {
+    width: 100%;
+}
+
+/* Service Description Animation */
+.service-description {
+    transition: color 0.3s ease-out;
+}
+
+.service-card:hover .service-description {
+    color: #4b5563;
+} 
